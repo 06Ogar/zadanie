@@ -5,6 +5,7 @@ import java.util.regex.Pattern;
 
 public class Rabot {
     public static void main(String[] args) throws  Exception{
+        //при вставлении текста, а не объекта, программа работает без ошибок и выполняет своё назначение
         FileReader fileAirports = new FileReader("C:/airports.dat");
         Scanner scan = new Scanner(fileAirports);
 
@@ -20,6 +21,7 @@ public class Rabot {
         while (matcher.find()) {
             int start = matcher.start();
             int end = matcher.end();
+            //если перед методом substring будет переменная типа String, то программа будет работать правильно
             System.out.println(fileAirports.substring(start, end));
             count += 1;
         }
